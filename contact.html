@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Monika Bhalla</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contact.css">
     <script defer src="js/scripts.js"></script>
 </head>
 <body>
@@ -12,7 +13,7 @@
         <h1>Monika Bhalla</h1>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="about.html">About Me</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="blog.html">Blog</a></li>
@@ -20,18 +21,29 @@
     </nav>
 
     <section class="contact">
-        <h2>Contact Me</h2>
-        <form id="contact-form">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <textarea id="message" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
-        <p id="form-status"></p>
+        <div class="contact-container">
+            <h2>Get in Touch</h2>
+            <p>
+                Feel free to reach out for collaborations or just a friendly chat. I'll get back to you as soon as possible!
+            </p>
+            <form id="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <p id="form-status"></p>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Monika Bhalla | Contact me anytime!</p>
+        <p>&copy; 2025 Monika Bhalla | Let's connect and build something amazing together!</p>
     </footer>
 </body>
 </html>

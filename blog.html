@@ -5,42 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | Monika Bhalla</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/blog.css">
 </head>
 <body>
     <nav>
-        <h1>Monika Bhalla</h1>
+        <div class="logo">
+            <h1>Monika Bhalla</h1>
+        </div>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="about.html">About Me</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="blog.html">Blog</a></li>
         </ul>
     </nav>
 
+    <section class="blog-intro">
+        <div class="container">
+            <h2>Latest Blog Posts</h2>
+            <p>Get the latest insights, tutorials, and trends in mobile and web development.</p>
+        </div>
+    </section>
+
     <section class="blog-posts">
-        <h2>Latest Blog Posts</h2>
-        <div class="blog-grid">
-            <div class="blog-card">
-                <h3>The Future of Mobile Development</h3>
-                <p>Discover emerging trends in mobile development and what’s next for the industry...</p>
-                <a href="#" class="btn">Read More</a>
+        <div class="container">
+            <div class="blog-item">
+                <img src="assets/images/imageb.png" alt="Mobile Development">
+                <div class="overlay">
+                    <h3>The Future of Mobile Development</h3>
+                    <p>Explore upcoming trends, frameworks, and tools in mobile development.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
             </div>
-            <div class="blog-card">
-                <h3>Understanding Firebase</h3>
-                <p>A comprehensive guide for developers to get started with Firebase for web and mobile apps.</p>
-                <a href="#" class="btn">Read More</a>
+
+            <div class="blog-item">
+                <img src="assets/images/imageb2.png" alt="Firebase">
+                <div class="overlay">
+                    <h3>Understanding Firebase</h3>
+                    <p>How Firebase can help you create dynamic, feature-rich mobile apps.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
             </div>
-            <div class="blog-card">
-                <h3>React Native vs. Flutter</h3>
-                <p>A detailed comparison of two popular cross-platform frameworks for app development.</p>
-                <a href="#" class="btn">Read More</a>
+
+            <div class="blog-item">
+                <img src="assets/images/image.png" alt="Web Development Journey">
+                <div class="overlay">
+                    <h3>My Journey in Web Development</h3>
+                    <p>Insights into my growth, challenges, and milestones in web development.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
             </div>
         </div>
     </section>
 
+    <section class="ad-banner">
+        <div class="container">
+            <h3>Want to Take Your Skills Further?</h3>
+            <p>Explore tutorials, tips, and techniques to sharpen your development skills.</p>
+            <a href="https://www.youtube.com/" class="btn" target="_blank">Explore Tutorials</a>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2025 Monika Bhalla | Stay Tuned for More Updates</p>
+        <p>&copy; 2025 Monika Bhalla | Empowering Creativity</p>
     </footer>
 </body>
 </html>
