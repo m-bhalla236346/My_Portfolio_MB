@@ -1,6 +1,9 @@
 // Import Firestore from your Firebase config and Firestore methods
-import { db } from './firebaseConfig.js';  
+import { db } from './firebaseConfig.js';
 import { collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js';
+
+// Check if the script is loaded
+console.log('scripts.js loaded');
 
 // Register the service worker (ensure it's only done in supported browsers)
 if ('serviceWorker' in navigator) {
@@ -19,28 +22,39 @@ const nameInput = document.querySelector('#name');
 const emailInput = document.querySelector('#email');
 const messageInput = document.querySelector('#message');
 
-// Handle form submission
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
+// Ensure the form is selected
+if (!contactForm) {
+    console.error('Form not found. Ensure #contact-form exists in the HTML.');
+} else {
+    // Handle form submission
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        console.log('Form submission event triggered');
 
-    const name = nameInput.value;
-    const email = emailInput.value;
-    const message = messageInput.value;
+        // Collect form data
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
 
-    try {
-        // Add data to Firestore collection 'contact_queries'
-        await addDoc(collection(db, 'contact_queries'), {
-            name: name,
-            email: email,
-            message: message,
-            timestamp: serverTimestamp()  // Store timestamp
-        });
+        if (!name || !email || !message) {
+            alert('Please fill in all fields!');
+            return;
+        }
 
-        // Alert user and reset form
-        alert('Your query has been submitted!');
-        contactForm.reset();
-    } catch (error) {
-        console.error('Error adding document: ', error);
-        alert('There was an error submitting your query. Please try again.');
-    }
-});
+        try {
+            // Add data to Firestore collection 'contact_queries'
+            const docRef = await addDoc(collection(db, 'contact_queries'), {
+                name,
+                email,
+                message,
+                timestamp: serverTimestamp()
+            });
+            console.log('Document written with ID: ', docRef.id);
+            alert('Your query has been submitted!');
+            contactForm.reset();
+        } catch (error) {
+            console.error('Error adding document: ', error);
+            alert('There was an error submitting your query. Please try again.');
+        }
+    });
+}
