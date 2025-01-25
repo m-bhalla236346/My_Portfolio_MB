@@ -30,6 +30,17 @@ nav h1 {
     font-size: 1.5rem;
 }
 
+nav h1 a {
+    text-decoration: none;
+    color: inherit; /* Keeps the text color the same as the heading */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+nav h1 a:hover {
+    color: #00bcd4;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -45,6 +56,8 @@ nav ul li a {
 nav ul li a:hover {
     color: #00bcd4;
 }
+
+
 
 @media (max-width: 768px) {
     nav ul {
